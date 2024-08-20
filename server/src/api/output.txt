@@ -1,0 +1,9 @@
+1Array
+(
+    [skus] => Array
+        (
+            [0] => das
+            [1] => LOL
+        )
+
+)

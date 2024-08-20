@@ -1,0 +1,142 @@
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  max-width: 100vw;
+  
+}
+
+.header { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+  width: 80vw;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+p{ 
+  line-height: 1.5;
+}
+
+button {
+  border-radius: 4px;
+  border: none;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #5a5858;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: aliceblue;
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
+} 
+
+.ProductList {
+  display: flex;
+  flex-direction: column;
+  margin: 5em 0em 5em 0em;
+  width: 80vw;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:start;
+  gap: 2em;
+}
+
+.card { 
+  position: relative;
+  padding: 3em 0 0 0 ;
+  text-align: center;
+  border-radius: 4px;
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 200px;
+}
+
+.delete-checkbox{
+  position: absolute;
+  top: 2em;
+  left: 2em;
+}
+
+.line { 
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin: 1em 0;
+  opacity: 1;
+}
+
+
+.add-product {
+  margin-top: 2em;
+}
+
+.form-input  { 
+  display: flex;
+  flex-direction: column; 
+  gap: 2em;
+}
+
+
+.form-buttons {
+  position: absolute;
+  display: flex;
+  gap: 1em;
+  top: 2.5rem;
+  right: 10rem;
+}
+
+.input {
+  display: flex;
+  gap: 1em;
+}
+
+.helpful-information { 
+  font-weight: 600;
+}
+
+.error { 
+  color: rgb(255, 74, 74);
+}
+
+.success { 
+  color: rgb(0, 255, 0);
+}
