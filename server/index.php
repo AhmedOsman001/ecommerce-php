@@ -1,6 +1,5 @@
 <?php
 
-namespace Scandiweb\Server\Config;
 
 use PDO;
 use PDOException;
