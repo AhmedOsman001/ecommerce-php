@@ -5,9 +5,9 @@ namespace Scandiweb\Server\Config;
 use PDO;
 use PDOException;
 class Database {
-    private $dsn = 'mysql:host=localhost;dbname=productsdb';
+    private $dsn = 'mysql:host=mysql.railway.internal;dbname=railway';
     private $username = 'root';
-    private $password = 'Actor@2000';
+    private $password = 'ihiqJYGzjcMNVmhvmcmoXXAlXlRavOsI';
     private $conn;
 
     public function getConnection() {
