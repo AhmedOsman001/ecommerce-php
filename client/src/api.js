@@ -2,21 +2,17 @@ import axios from "axios";
 
 export const getProducts = async () => {
   try {
-    const response = await fetch(
-      "http://localhost:3000/server/src/api/getProducts.php",
+    const response = await axios.get(
+      "http://localhost:3000/server/index.php",
       {
         headers: {
           "Content-Type": "application/json",
         },
       }
     );
-
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const data = await response.json();
-    return data;
+    
+    console.log(response.data);
+    return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
     throw error;
@@ -27,7 +23,7 @@ export const getProducts = async () => {
 
 export const addProduct = async (product) => {
   const response = await axios.post(
-    "http://localhost:3000/server/src/api/addProduct.php",
+    "http://localhost:3000/server/index.php",
     product,
     {
       headers: {
@@ -40,13 +36,13 @@ export const addProduct = async (product) => {
 
 export const deleteProducts = async (skus) => {
   try {
-    const response = await axios.post(
-      "http://localhost:3000/server/src/api/deleteProducts.php",
-      { skus: skus },
+    const response = await axios.delete(
+      "http://localhost:3000/server/index.php",
       {
         headers: {
           "Content-Type": "application/json",
         },
+        data: { skus: skus },
       }
     );
     console.log(response);
