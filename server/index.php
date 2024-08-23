@@ -1,3 +1,4 @@
 <?php 
-
-echo "Hello, World!";
+    http_response_code(200);
+    echo "Hello World!";
+?> 
