@@ -1,6 +1,6 @@
 <?php
 
-namespace Scandiweb\Server\Classes;
+namespace Server\Src\Classes;
 
 use PDO;
 
@@ -25,9 +25,9 @@ class ProductManager
 
         // Map of type to class names
         $productClasses = [
-            'DVD' => ['class' => 'Scandiweb\Server\Classes\DVD', 'params' => ['sku', 'name', 'price', 'size']],
-            'Book' => ['class' => 'Scandiweb\Server\Classes\Book', 'params' => ['sku', 'name', 'price', 'weight']],
-            'Furniture' => ['class' => 'Scandiweb\Server\Classes\Furniture', 'params' => ['sku', 'name', 'price', 'height', 'width', 'length']]
+            'DVD' => ['class' => 'Server\Src\Classes\DVD', 'params' => ['sku', 'name', 'price', 'size']],
+            'Book' => ['class' => 'Server\Src\Classes\Book', 'params' => ['sku', 'name', 'price', 'weight']],
+            'Furniture' => ['class' => 'Server\Src\Classes\Furniture', 'params' => ['sku', 'name', 'price', 'height', 'width', 'length']]
         ];
 
         

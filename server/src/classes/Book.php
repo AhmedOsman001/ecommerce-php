@@ -1,6 +1,6 @@
 <?php
 
-namespace Scandiweb\Server\Classes;
+namespace Server\Src\Classes;
 
 class Book extends Product {
     private $weight;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Scandiweb\Server\Classes;
+namespace Server\Src\Classes;
 
 class DVD extends Product {
     private $size;

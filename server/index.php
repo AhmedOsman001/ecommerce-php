@@ -1,17 +1,17 @@
 <?php 
 
-namespace Scandiweb\Server;
+namespace Server;
 
 require "./vendor/autoload.php";
 
 include "./src/config/Database.php";
 include "./src/classes/ProductManager.php";
 
-use Scandiweb\Server\Classes\ProductManager;
-use Scandiweb\Server\Config\Database;
+use Server\Src\Classes\ProductManager;
+use Server\Src\Config\Database;
 
 use PDOException;
-
+    
 function cors()
 {
 
@@ -54,9 +54,9 @@ if ($method === 'GET') {
 elseif ($method === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     $productClass = [
-        'DVD' => 'Scandiweb\Server\Classes\DVD',
-        'Book' => 'Scandiweb\Server\Classes\Book',
-        'Furniture' => 'Scandiweb\Server\Classes\Furniture'
+        'DVD' => 'Server\Src\Classes\DVD',
+        'Book' => 'Server\Src\Classes\Book',
+        'Furniture' => 'Server\Src\Classes\Furniture'
     ][$data['type']] ?? null;
     
     $filteredAttributes = array_values(array_filter(

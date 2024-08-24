@@ -18,7 +18,7 @@ class ComposerStaticInit1452a7a3ed78a49596116991b5f60c7b
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Scandiweb\\Server\\' => 17,
+            'Server\\' => 7,
         ),
         'P' => 
         array (
@@ -47,9 +47,9 @@ class ComposerStaticInit1452a7a3ed78a49596116991b5f60c7b
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Scandiweb\\Server\\' => 
+        'Server\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..' . '/',
         ),
         'PhpOption\\' => 
         array (

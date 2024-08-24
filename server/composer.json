@@ -2,7 +2,7 @@
     "name": "scandiweb/server",
     "autoload": {
         "psr-4": {
-            "Scandiweb\\Server\\": "src/"
+            "Server\\": "./"
         }
     },
     "require": {
