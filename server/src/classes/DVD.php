@@ -40,10 +40,15 @@ class DVD extends Product {
         $query = "INSERT INTO products (sku, name, price, type, size) VALUES (:sku, :name, :price, 'DVD', :size)";
         $stmt = $conn->prepare($query);
 
-        $stmt->bindParam(':sku', $this->getSku());
-        $stmt->bindParam(':name', $this->getName());
-        $stmt->bindParam(':price', $this->getPrice());
-        $stmt->bindParam(':size', $this->getSize());
+        $sku = $this->getSku();
+        $name = $this->getName();
+        $price = $this->getPrice();
+        $size = $this->getSize();
+
+        $stmt->bindParam(':sku', $sku);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':size', $size);
 
         return $stmt->execute();
     }

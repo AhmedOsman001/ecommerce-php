@@ -39,11 +39,16 @@ class Book extends Product {
         $query = "INSERT INTO products (sku, name, price, type, weight) VALUES (:sku, :name, :price, :book, :weight)";
         $stmt = $conn->prepare($query);
 
-        $stmt->bindParam(':sku', $this->getSku());
-        $stmt->bindParam(':name', $this->getName());
-        $stmt->bindParam(':price', $this->getPrice());
-        $stmt->bindParam(':book', $this->getType());
-        $stmt->bindParam(':weight', $this->getWeight());
+        $sku = $this->getSku();
+        $name = $this->getName();
+        $price = $this->getPrice();
+        $weight = $this->getWeight();
+
+        $stmt->bindParam(':sku', $sku);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':weight', $weight);
+        
 
         return $stmt->execute();
     }

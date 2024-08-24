@@ -64,15 +64,16 @@ class Furniture extends Product
         $query = "INSERT INTO products (sku, name, price, type, height, width, length) VALUES (:sku, :name, :price, 'Furniture', :height, :width, :length)";
         $stmt = $conn->prepare($query);
 
-        $stmt->bindParam(':sku', $this->getSku());
-        $stmt->bindParam(':name', $this->getName());
-        $stmt->bindParam(':price', $this->getPrice());
-
-        // Fix the parameter binding
+        $sku = $this->getSku();
+        $name = $this->getName();
+        $price = $this->getPrice();
         $height = $this->getHeight();
         $width = $this->getWidth();
         $length = $this->getLength();
-        
+
+        $stmt->bindParam(':sku', $sku);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':price', $price);
         $stmt->bindParam(':height', $height);
         $stmt->bindParam(':width', $width);
         $stmt->bindParam(':length', $length);

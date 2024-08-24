@@ -22,16 +22,22 @@ export const getProducts = async () => {
 // src/api/addProduct.js
 
 export const addProduct = async (product) => {
-  const response = await axios.post(
-    "https://ecommerce-php-production.up.railway.app/",
-    product,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
-  return response.data;
+  try {
+    const response = await axios.post(
+      "https://ecommerce-php-production.up.railway.app/",
+      product,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    console.error("Error adding product:", error);
+    throw error;
+  }
 };
 
 export const deleteProducts = async (skus) => {
