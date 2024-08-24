@@ -3,7 +3,7 @@
         'name' => 'scandiweb/server',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '412a6e9836a38eb5bd9c71ee94a712e5dd600b81',
+        'reference' => '19bca8e59025f52ce4133001abf13f6488f16e01',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'scandiweb/server' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '412a6e9836a38eb5bd9c71ee94a712e5dd600b81',
+            'reference' => '19bca8e59025f52ce4133001abf13f6488f16e01',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
