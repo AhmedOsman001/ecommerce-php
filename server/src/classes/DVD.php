@@ -1,7 +1,8 @@
 <?php
 
 namespace Server\Src\Classes;
-
+require_once 'Product.php';
+use Server\Src\Classes\Product;
 class DVD extends Product {
     private $size;
 

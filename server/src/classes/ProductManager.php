@@ -5,7 +5,6 @@ namespace Server\Src\Classes;
 use PDO;
 
 
-
 class ProductManager
 {
     private $conn;

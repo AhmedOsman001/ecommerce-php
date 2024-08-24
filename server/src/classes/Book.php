@@ -1,7 +1,7 @@
 <?php
 
 namespace Server\Src\Classes;
-
+require_once 'Product.php';
 class Book extends Product {
     private $weight;
 

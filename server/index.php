@@ -2,13 +2,20 @@
 
 namespace Server;
 
-require "./vendor/autoload.php";
 
-include "./src/config/Database.php";
-include "./src/classes/ProductManager.php";
+require_once __DIR__ . '/src/classes/ProductManager.php';
+require_once __DIR__ . '/src/config/Database.php';
+require_once __DIR__ . '/src/classes/Book.php';
+require_once __DIR__ . '/src/classes/DVD.php';
+require_once __DIR__ . '/src/classes/Furniture.php';
+require_once __DIR__ . '/src/classes/Product.php';
+
+
+
 
 use Server\Src\Classes\ProductManager;
 use Server\Src\Config\Database;
+
 
 use PDOException;
     
