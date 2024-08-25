@@ -11,7 +11,6 @@ export const getProducts = async () => {
       }
     );
     
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -32,7 +31,6 @@ export const addProduct = async (product) => {
         },
       }
     );
-    console.log(response);
     return response.data;
   } catch (error) {
     console.error("Error adding product:", error);
@@ -51,7 +49,6 @@ export const deleteProducts = async (skus) => {
         data: { skus: skus },
       }
     );
-    console.log(response);
   } catch (error) {
     console.error("Error deleting products:", error);
     throw error;
