@@ -15,7 +15,6 @@ const AddProduct = () => {
             await addProduct(product);
             setError(null);
             window.location.href = '/';
-            setProduct({ sku: '', name: '', price: '', type: '', size: '', weight: '', height: '', width: '', length: '' });
         } catch (error) {
             setError(error.message);
         }
