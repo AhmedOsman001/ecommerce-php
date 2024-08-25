@@ -4,7 +4,6 @@ import { addProduct } from '../api';
 const AddProduct = () => {
     const [product, setProduct] = useState({ sku: '', name: '', price: '', type: '', size: '', weight: '', height: '', width: '', length: '' });
     const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(null);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProduct(prevState => ({ ...prevState, [name]: value }));
@@ -16,9 +15,8 @@ const AddProduct = () => {
             await addProduct(product);
             setError(null);
             setProduct({ sku: '', name: '', price: '', type: '', size: '', weight: '', height: '', width: '', length: '' });
-            setSuccess('Product added successfully');
+            window.location.href = '/';
         } catch (error) {
-            setSuccess(null);
             setError(error.message);
         }
         
@@ -32,7 +30,6 @@ const AddProduct = () => {
                 <h1>Product Add</h1>
             </header>
             <div className="line"></div>
-            {success && <div className="success">{success}</div>}
             {error && <div className="error">{error}</div>}
             <form id="product_form" onSubmit={handleSubmit}>
                 <div className="form-input">
