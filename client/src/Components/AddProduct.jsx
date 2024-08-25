@@ -4,7 +4,6 @@ import { addProduct } from '../api';
 const AddProduct = () => {
     const [product, setProduct] = useState({ sku: '', name: '', price: '', type: '', size: '', weight: '', height: '', width: '', length: '' });
     const [error, setError] = useState(null);
-    const [state , setState] = useState(false);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProduct(prevState => ({ ...prevState, [name]: value }));
@@ -15,7 +14,7 @@ const AddProduct = () => {
         try {
             await addProduct(product);
             setError(null);
-            setState(true);
+            window.location.href = '/';
         } catch (error) {
             setError(error.message);
         }
@@ -27,7 +26,7 @@ const AddProduct = () => {
     return (
         <div className='add-product'>
             <header className='header'>
-                <h1>{state ? "Product List" : "Product Add" }</h1>
+                <h1>Product Add</h1>
             </header>
             <div className="line"></div>
             {error && <div className="error">{error}</div>}
