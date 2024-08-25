@@ -35,7 +35,7 @@ class Book extends Product {
 
     public function save($conn)
     {
-        echo $this->getWeight();
+        
         $query = "INSERT INTO products (sku, name, price, type, weight) VALUES (:sku, :name, :price, :book, :weight)";
         $stmt = $conn->prepare($query);
 
