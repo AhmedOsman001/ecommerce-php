@@ -37,7 +37,7 @@ const ProductList = () => {
                 <h1>Product List</h1>
                 <div className="buttons">
                     <button onClick={() => window.location.href = '/add-product'}>ADD</button>
-                    <button onClick={handleDelete}>MASS DELETE</button>
+                    <button id='delete-product-btn' onClick={handleDelete}>MASS DELETE</button>
                 </div>
 
             </header>
