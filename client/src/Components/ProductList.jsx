@@ -31,18 +31,14 @@ const ProductList = () => {
         );
     };
 
-
-    const handleCheat = async () => {
-        await deleteProducts(['SKUTest000']);
-        window.location.href = '/add-product';
-    }
+    
 
     return (
         <div className='ProductList'>
             <header className='header'>
                 <h1>Product List</h1>
                 <div className="buttons">
-                    <button onClick={() => handleCheat()}>ADD</button>
+                    <button onClick={() => window.location.href = '/add-product'}>ADD</button>
                     <button id='delete-product-btn' onClick={handleDelete}>MASS DELETE</button>
                 </div>
 
