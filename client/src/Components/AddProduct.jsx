@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const AddProduct = () => {
     const [product, setProduct] = useState({ sku: '', name: '', price: '', type: '', size: '', weight: '', height: '', width: '', length: '' });
     const [error, setError] = useState(null);
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProduct(prevState => ({ ...prevState, [name]: value }));
@@ -20,10 +20,10 @@ const AddProduct = () => {
         } catch (error) {
             setError(error.message);
         }
-        
+
     };
 
-    
+
 
     return (
         <div className='add-product'>

@@ -10,7 +10,7 @@ export const getProducts = async () => {
         },
       }
     );
-    
+
     return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -40,15 +40,12 @@ export const addProduct = async (product) => {
 
 export const deleteProducts = async (skus) => {
   try {
-    const response = await axios.delete(
-      "https://ecommerce-php-production.up.railway.app/",
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: { skus: skus },
-      }
-    );
+    await axios.delete("https://ecommerce-php-production.up.railway.app/", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: { skus: skus },
+    });
   } catch (error) {
     console.error("Error deleting products:", error);
     throw error;

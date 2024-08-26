@@ -8,22 +8,19 @@ const ProductList = () => {
         const fetchProducts = async () => {
             const listproducts = await getProducts();
             setProducts(listproducts);
-            console.log(listproducts);
         };
         fetchProducts();
     }, []);
 
     const handleDelete = async () => {
-        console.log(selectedSkus);
         await deleteProducts(selectedSkus);
         const updatedProducts = await getProducts();
-        console.log(updatedProducts);
         setProducts(updatedProducts);
         setSelectedSkus([]);
 
     };
 
-    const handleCheckboxChange = async(sku) => {
+    const handleCheckboxChange = async (sku) => {
         setSelectedSkus(prevSelected =>
             prevSelected.includes(sku) ?
                 prevSelected.filter(s => s !== sku) :
@@ -31,7 +28,7 @@ const ProductList = () => {
         );
     };
 
-    
+
 
     return (
         <div className='ProductList'>
