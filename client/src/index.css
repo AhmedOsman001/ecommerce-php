@@ -115,6 +115,19 @@ ul {
   gap: 2em;
 }
 
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  padding: 0.4rem ;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(175, 175, 175);
+  display: block;
+}
+
+label {
+  padding-top: 0.4rem;
+}
 
 .form-buttons {
   position: absolute;
@@ -124,7 +137,7 @@ ul {
   right: 10rem;
 }
 
-.input {
+.input-group {
   display: flex;
   gap: 1em;
 }
@@ -135,8 +148,4 @@ ul {
 
 .error { 
   color: rgb(255, 74, 74);
-}
-
-.success { 
-  color: rgb(0, 255, 0);
 }

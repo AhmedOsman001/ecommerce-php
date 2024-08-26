@@ -34,21 +34,21 @@ const AddProduct = () => {
             {error && <div className="error">{error}</div>}
             <form id="product_form" onSubmit={handleSubmit}>
                 <div className="form-input">
-                    <div className="input">
+                    <div className="input-group">
                         <label htmlFor="sku">SKU</label>
-                        <input id="sku" name="sku" placeholder="SKU" value={product.sku} onChange={handleChange} required />
+                        <input id="sku" name="sku" className='form__input' placeholder="SKU" value={product.sku} onChange={handleChange} required />
                     </div>
-                    <div className="input">
+                    <div className="input-group">
                         <label htmlFor="Name">Name</label>
-                        <input id="name" name="name" placeholder="Name" value={product.name} onChange={handleChange} required />
+                        <input id="name" name="name" className='form__input' placeholder="Name" value={product.name} onChange={handleChange} required />
                     </div>
-                    <div className="input">
+                    <div className="input-group">
                         <label htmlFor="Price">Price ($)</label>
-                        <input type='number' id="price" name="price" placeholder="Price" value={product.price} onChange={handleChange} required />
+                        <input type='number' id="price" name="price" className='form__input' placeholder="Price" value={product.price} onChange={handleChange} required />
                     </div>
-                    <div className="input">
+                    <div className="input-group">
                         <label htmlFor="Type">Type Swicher</label>
-                        <select id="productType" name="type" value={product.type} onChange={handleChange} required>
+                        <select id="productType" name="type" className='form__input' value={product.type} onChange={handleChange} required>
                             <option value="">Select Type</option>
                             <option value="DVD">DVD</option>
                             <option value="Book">Book</option>
@@ -60,9 +60,9 @@ const AddProduct = () => {
                     {product.type === 'DVD' &&
 
                         <>
-                            <div className="input">
+                            <div className="input-group">
                                 <label htmlFor="Size">Size</label>
-                                <input type='number' id="size" name="size" placeholder="Size (MB)" value={product.size} onChange={handleChange} required />
+                                <input type='number' id="size" name="size" className='form__input' placeholder="Size (MB)" value={product.size} onChange={handleChange} required />
                             </div>
                             <p className='helpful-information'>
                                 Please provide size in MB.
@@ -71,9 +71,9 @@ const AddProduct = () => {
                     }
                     {product.type === 'Book' &&
                         <>
-                            <div className="input">
+                            <div className="input-group">
                                 <label htmlFor="Weight">Weight</label>
-                                <input type='number' id="weight" name="weight" placeholder="Weight (Kg)" value={product.weight} onChange={handleChange} required />
+                                <input type='number' id="weight" name="weight" className='form__input' placeholder="Weight (Kg)" value={product.weight} onChange={handleChange} required />
                             </div>
                             <p className='helpful-information'>
                                 Please provide weight in Kg.
@@ -82,17 +82,17 @@ const AddProduct = () => {
                     }
                     {product.type === 'Furniture' && (
                         <>
-                            <div className="input">
+                            <div className="input-group">
                                 <label htmlFor="Height">Height</label>
-                                <input type='number' id="height" name="height" placeholder="Height (cm)" value={product.height} onChange={handleChange} required />
+                                <input type='number' id="height" name="height" className='form__input' placeholder="Height (cm)" value={product.height} onChange={handleChange} required />
                             </div>
-                            <div className="input">
+                            <div className="input-group">
                                 <label htmlFor="Width">Width</label>
-                                <input type='number' id="width" name="width" placeholder="Width (cm)" value={product.width} onChange={handleChange} required />
+                                <input type='number' id="width" name="width" className='form__input' placeholder="Width (cm)" value={product.width} onChange={handleChange} required />
                             </div>
-                            <div className="input">
+                            <div className="input-group">
                                 <label htmlFor="Length">Length</label>
-                                <input type='number' id="length" name="length" placeholder="Length (cm)" value={product.length} onChange={handleChange} required />
+                                <input type='number' id="length" name="length" className='form__input' placeholder="Length (cm)" value={product.length} onChange={handleChange} required />
                             </div>
                             <p className='helpful-information'>
                                 Please provide dimensions in HxWxL format.
