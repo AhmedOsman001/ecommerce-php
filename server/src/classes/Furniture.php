@@ -1,8 +1,7 @@
 <?php
 
 namespace Server\Src\Classes;   
-require_once 'Product.php';
-use Server\Src\Classes\Product;
+
 class Furniture extends Product
 {
     private $height;
