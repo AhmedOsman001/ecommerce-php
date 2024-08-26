@@ -1,6 +1,7 @@
 <?php
 
 namespace Server\Src\Classes;   
+require_once 'Product.php';
 
 class Furniture extends Product
 {
