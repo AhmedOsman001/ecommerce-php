@@ -21,13 +21,11 @@ class Book extends Product {
         return "Weight: {$this->getWeight()} KG";
     }
 
-    // Getters
     public function getWeight()
     {
         return $this->weight;
     }
 
-    // Setters
     public function setWeight($weight)
     {
         $this->weight = $weight;

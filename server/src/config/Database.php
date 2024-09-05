@@ -12,13 +12,12 @@ class Database {
     private $conn;
 
     public function __construct() {
-        // Load environment variables
+
         $host = getenv('MYSQLHOST') ;
         $dbname = getenv('MYSQLDATABASE') ;
         $this->username = getenv('MYSQLUSER') ;
         $this->password = getenv('MYSQLPASSWORD');
         
-        // Set DSN with environment variables
         $this->dsn = "mysql:host=$host;dbname=$dbname";
     }
 

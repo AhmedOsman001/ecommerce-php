@@ -21,16 +21,13 @@ class DVD extends Product {
         return "Size: {$this->getSize()} MB";
     }
 
-    // Getters
     public function getSize()
     {
         return $this->size;
     }
 
-    // Setters
     public function setSize($size)
     {
-        // You can add validation logic here
         $this->size = $size;
     }
 

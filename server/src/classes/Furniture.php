@@ -27,7 +27,7 @@ class Furniture extends Product
         return "Dimensions: {$this->getHeight()}x{$this->getWidth()}x{$this->getLength()}";
     }
 
-    // Getters
+    
     public function getHeight()
     {
         return $this->height;
@@ -43,7 +43,7 @@ class Furniture extends Product
         return $this->length;
     }
 
-    // Setters
+    
     public function setHeight($height)
     {
         $this->height = $height;
