@@ -13,10 +13,10 @@ class Database {
 
     public function __construct() {
 
-        $host =  "localhost"; ;
-        $dbname =  "productsdb"; ;
-        $this->username =  "root"; ;
-        $this->password =  "Actor@2000"; ;
+        $host = getenv('MYSQLHOST') ;
+        $dbname = getenv('MYSQLDATABASE') ;
+        $this->username = getenv('MYSQLUSER') ;
+        $this->password = getenv('MYSQLPASSWORD');
         
         $this->dsn = "mysql:host=$host;dbname=$dbname";
     }
