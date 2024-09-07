@@ -3,7 +3,7 @@ import axios from "axios";
 export const getProducts = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:3000/server/index.php",
+      "https://ecommerce-php-production.up.railway.app/",
       {
         headers: {
           "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export const getProducts = async () => {
 export const addProduct = async (product) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/server/index.php",
+      "https://ecommerce-php-production.up.railway.app/",
       product,
       {
         headers: {
@@ -38,7 +38,7 @@ export const addProduct = async (product) => {
 
 export const deleteProducts = async (skus) => {
   try {
-    await axios.delete("http://localhost:3000/server/index.php", {
+    await axios.delete("https://ecommerce-php-production.up.railway.app/", {
       headers: {
         "Content-Type": "application/json",
       },
