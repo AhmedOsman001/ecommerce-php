@@ -42,7 +42,7 @@ class ProductManager
                 }
 
                 $product = new $className(...$constructorParams);
-                var_dump($product);
+                
                 $products[] = [
                     'sku' => $product->getSku(),
                     'name' => $product->getName(),
