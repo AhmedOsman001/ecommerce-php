@@ -2,6 +2,8 @@
 
 namespace Server\Src\Classes;
 require_once 'Product.php';
+
+use Exception;
 class DVD extends Product {
     private $size;
 
@@ -27,7 +29,10 @@ class DVD extends Product {
     }
 
     public function setSize($size)
-    {
+    {   
+        if ($size <= 0) {
+            throw new Exception('Size must be positive.');
+        }
         $this->size = $size;
     }
 

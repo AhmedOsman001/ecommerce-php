@@ -2,6 +2,8 @@
 
 namespace Server\Src\Classes;
 require_once 'Product.php';
+
+use Exception;
 class Book extends Product {
     private $weight;
 
@@ -27,7 +29,10 @@ class Book extends Product {
     }
 
     public function setWeight($weight)
-    {
+    {   
+        if ($weight <= 0) {
+            throw new Exception('Weight must be positive.');
+        }                                          
         $this->weight = $weight;
     }
 

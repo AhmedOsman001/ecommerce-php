@@ -18,7 +18,6 @@ export const getProducts = async () => {
   }
 };
 
-// src/api/addProduct.js
 
 export const addProduct = async (product) => {
   try {

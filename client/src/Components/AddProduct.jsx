@@ -24,7 +24,6 @@ const AddProduct = () => {
     };
 
 
-
     return (
         <div className='add-product'>
             <header className='header'>
@@ -55,7 +54,6 @@ const AddProduct = () => {
                             <option value="Furniture">Furniture</option>
                         </select>
                     </div>
-
 
                     {product.type === 'DVD' &&
 

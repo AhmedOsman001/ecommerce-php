@@ -3,6 +3,7 @@
 namespace Server\Src\Classes;   
 require_once 'Product.php';
 
+use Exception;
 class Furniture extends Product
 {
     private $height;
@@ -46,16 +47,25 @@ class Furniture extends Product
     
     public function setHeight($height)
     {
+        if ($height <= 0) {
+            throw new Exception('Height must be positive.');
+        }
         $this->height = $height;
     }
 
     public function setWidth($width)
     {
+        if ($width <= 0) {
+            throw new Exception('Width must be positive.');
+        }
         $this->width = $width;
     }
 
     public function setLength($length)
     {
+        if ($length <= 0) {
+            throw new Exception('Length must be positive.');
+        }
         $this->length = $length;
     }
 
