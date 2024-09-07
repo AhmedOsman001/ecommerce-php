@@ -18,7 +18,8 @@ const AddProduct = () => {
             setError(null);
             navigate('/')
         } catch (error) {
-            setError(error.message);
+            console.log(error.response.data.error);
+            setError(error.response.data.error);
         }
 
     };

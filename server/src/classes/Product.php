@@ -39,16 +39,18 @@ abstract class Product
 
     public function setSku($sku)
     {   
+        $sku = preg_replace('/\s+/', '', $sku);
         if (strlen($sku) < 1) {
-            throw new Exception('SKU must be at least 1 character long.');
+            throw new Exception('SKU should not be empty.');
         }
         $this->sku = $sku;
     }
 
     public function setName($name)
-    {
-        if (strlen($name) < 1) {
-            throw new Exception('Name must be at least 1 character long.');
+    {   
+        $name_filter = preg_replace('/\s+/', '', $name);
+        if (strlen($name_filter) < 1) {
+            throw new Exception('Name should not be empty.');
         }
         $this->name = $name;
     }
