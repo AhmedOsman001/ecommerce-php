@@ -14,7 +14,7 @@ use Server\Src\Config\Database;
 
 
 use PDOException;
-
+use Exception;
 
 $database = new Database();
 $db = $database->getConnection();
@@ -48,6 +48,7 @@ if ($method === 'GET') {
             $product = new $className(...$constructorParams);
 
             if ($productManager->addProduct($product)) {
+                http_response_code(201);
                 echo json_encode(["message" => "Product added successfully"]);
             }
         } catch (PDOException $e) {
@@ -58,10 +59,13 @@ if ($method === 'GET') {
                 http_response_code(500);
                 echo json_encode(['error' => 'An unexpected error occurred: ' . $e->getMessage()]);
             }
+        } catch (Exception $e) {
+            http_response_code(400);
+            echo json_encode(['error' => $e->getMessage()]);
         }
     } else {
-        http_response_code(400); // Bad Request
-        echo json_encode(['error' => 'Invalid product type']);
+        http_response_code(400); 
+        echo json_encode(['error' => 'Bad Request']);
     }
 } elseif ($method === 'DELETE') {
     $data = json_decode(file_get_contents('php://input'), true);
