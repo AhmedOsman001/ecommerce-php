@@ -29,9 +29,9 @@ if ($method === 'GET') {
 } elseif ($method === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     $productClasses = [
-        'DVD' => ['class' => 'Server\Src\Classes\DVD', 'params' => ['sku', 'name', 'price', 'size']],
-        'Book' => ['class' => 'Server\Src\Classes\Book', 'params' => ['sku', 'name', 'price', 'weight']],
-        'Furniture' => ['class' => 'Server\Src\Classes\Furniture', 'params' => ['sku', 'name', 'price', 'height', 'width', 'length']]
+        'DVD' => ['class' => 'Server\Src\Classes\DVD', 'props' => ['sku', 'name', 'price', 'size']],
+        'Book' => ['class' => 'Server\Src\Classes\Book', 'props' => ['sku', 'name', 'price', 'weight']],
+        'Furniture' => ['class' => 'Server\Src\Classes\Furniture', 'props' => ['sku', 'name', 'price', 'height', 'width', 'length']]
     ];
 
     $productClassInfo = $productClasses[$data['type']] ?? null;
@@ -39,13 +39,13 @@ if ($method === 'GET') {
     if ($productClassInfo) {
         $className = $productClassInfo['class'];
 
-        $constructorParams = [];
-        foreach ($productClassInfo['params'] as $param) {
-            $constructorParams[] = $data[$param] ?? null;
+        $constructorProps = [];
+        foreach ($productClassInfo['props'] as $prop) {
+            $constructorProps[] = $data[$prop] ?? null;
         }
 
         try {
-            $product = new $className(...$constructorParams);
+            $product = new $className(...$constructorProps);
 
             if ($productManager->addProduct($product)) {
                 http_response_code(201);

@@ -23,9 +23,9 @@ class ProductManager
         $products = [];
 
         $productClasses = [
-            'DVD' => ['class' => 'Server\Src\Classes\DVD', 'params' => ['sku', 'name', 'price', 'size']],
-            'Book' => ['class' => 'Server\Src\Classes\Book', 'params' => ['sku', 'name', 'price', 'weight']],
-            'Furniture' => ['class' => 'Server\Src\Classes\Furniture', 'params' => ['sku', 'name', 'price', 'height', 'width', 'length']]
+            'DVD' => ['class' => 'Server\Src\Classes\DVD', 'props' => ['sku', 'name', 'price', 'size']],
+            'Book' => ['class' => 'Server\Src\Classes\Book', 'props' => ['sku', 'name', 'price', 'weight']],
+            'Furniture' => ['class' => 'Server\Src\Classes\Furniture', 'props' => ['sku', 'name', 'price', 'height', 'width', 'length']]
         ];
 
 
@@ -35,13 +35,13 @@ class ProductManager
 
             if ($productClassInfo) {
                 $className = $productClassInfo['class'];
-                $constructorParams = [];
+                $constructorProps = [];
 
-                foreach ($productClassInfo['params'] as $param) {
-                    $constructorParams[] = $row[$param];
+                foreach ($productClassInfo['props'] as $prop) {
+                    $constructorProps[] = $row[$prop];
                 }
 
-                $product = new $className(...$constructorParams);
+                $product = new $className(...$constructorProps);
                 
                 $products[] = [
                     'sku' => $product->getSku(),
